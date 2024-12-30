@@ -83,9 +83,8 @@ const store = makeInMemoryStore({
      })
   })
  
-  console.log(chalk.blue.bold("- Hi Welcome to NekoBot !"))
-  console.log(chalk.white.bold("| Terimakasih telah menggunakan Script ini !"))
-  console.log(chalk.white.bold("| Github saya [Follow] : " + chalk.cyan.bold("https://github.com/AxellNetwork")))
+  console.log(chalk.blue.bold("- مرحبا في Edgar-Bot V2 !"))
+  console.log(chalk.white.bold("| النسخة الثانية !"))
   console.log(chalk.white.bold("––––––––––––––––––––"))
   
 async function system() {
