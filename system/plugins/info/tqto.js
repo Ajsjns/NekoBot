@@ -6,7 +6,7 @@ module.exports = {
   async run(m) {
     let cap = `*>_اشترك من فضلك_* :*
         
-> *-* https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G
+> *-*https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G
     m.reply(cap);
   },
 };
