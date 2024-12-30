@@ -2,11 +2,12 @@ module.exports = {
   command: "channel",
   alias: ["credit"],
   category: ["info"],
-  description: "قناة صانع البوت",
+  description: "قناة واتساب صانع البوت",
   async run(m) {
-    let cap = `*>_اشترك من فضلك_* :*
+    let cap = `*>_ يرجى المتابعة :*
         
-> *- Telegram :* https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G
+*– قناة الواتساب :*
+https://whatsapp.com/channel/0029VauJgduEwEjwwVwLnw37;
     m.reply(cap);
   },
 };
