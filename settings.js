@@ -2,22 +2,22 @@ const fs = require('node:fs');
 
 const config = {
     owner: ["6285351971353", "6281910094713"],
-    name: "- nekoBot - Simple WhatsApp bot",
+    name: "Edgar-MD by Ayoub-Dev",
     sessions: "sessions",
     sticker: {
       packname: "Made by ",
-      author: "nekoBot"
+      author: "Edgar-MD V2"
     },
    messages: {
-      wait: "> Data sedang memprosess...",
-      owner: "> Khusus Owner bot ini mah",
-      premium: "> Upgrade ke premium kalo mau akses, murah aja",
-      group: "> Fitur khusus group chat",
-      botAdmin: "> Lu siapa bukan Admin group",
-      grootbotbup: "> Jadiin NekoBot admin dulu baru bisa akses",
+      wait: "> يرجى الإنظار...",
+      owner: "> هذا الامر فقط ل ayoub-Dev",
+      premium: "> يجب ان تكون مشترك",
+      group: "> هذا الامر فقط للمجموعات",
+      botAdmin: "> أنت لست ادمن",
+      grootbotbup: "> أنا لست مشرفا",
    },
    database: "neko-db",
-   tz: "Asia/Jakarta"
+   tz: "Africa/Casablanca"
 }
 
 module.exports = config
