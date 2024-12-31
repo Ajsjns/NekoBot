@@ -3,19 +3,19 @@ module.exports = {
   alias: ["gcl", "listgroup"],
   category: ["info"],
   settings: {
-    limit: true,
+    limit: false,
     owner: true,
   },
-  description: "> List Group chat bot",
+  description: "> قائمة مجموعات الدردشة للبوت",
   async run(m, { sock, Func, store }) {
     let data = Object.values(store.groupMetadata);
-    let cap = "*– 乂 Group - List*\n";
-    cap += `> *- Total :* ${data.length}\n\n`;
+    let cap = "*– 乂 قائمة - المجموعات*\n";
+    cap += `> *- الإجمالي :* ${data.length}\n\n`;
     cap += data
       .sort((a, b) => b.creation - a.creation)
       .map(
         (a, i) =>
-          `> *${i + 1}.* ${a.subject}\n> *- Dibuat :* ${Func.ago(a.creation * 1000)}\n> *- Total member :* ${a.size}\n> *- Pemilik group :* ${a.owner ? "@" + a.owner.split("@")[0] : "Gada pemilik nya"}`,
+          `> *${i + 1}.* ${a.subject}\n> *- تم الإنشاء :* ${Func.ago(a.creation * 1000)}\n> *- إجمالي الأعضاء :* ${a.size}\n> *- مالك المجموعة :* ${a.owner ? "@" + a.owner.split("@")[0] : "لا يوجد مالك"}`,
       )
       .join("\n\n");
 
