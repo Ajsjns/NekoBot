@@ -5,7 +5,7 @@ module.exports = {
   command: "ping",
   alias: ["ping", "p"],
   category: ["main"],
-  description: "Periksa Status bot",
+  description: "لرؤية سرعة البوت",
   loading: true,
   async run(m, { sock, config, Func }) {
     let start = performance.now(),
@@ -15,7 +15,6 @@ module.exports = {
 * Running On : ${process.env.username === "root" ? "VPS" : "HOSTING ( PANEL )"}
 * Uptime : ${Func.toDate(process.uptime() * 1000)}
 * Home Dir : ${os.homedir}
-* Tmp Dir : ${os.tmpdir()} *( ${fs.readdirSync(process.cwd() + os.tmpdir).length} Files )*
 * Hostname : ${os.hostname()}
 * Node Version : ${process.version}
 * Cwd : ${process.cwd()}

@@ -1,5 +1,5 @@
 const moment = require("moment-timezone");
-const pkg = require(process.cwd()+"/package.json");
+const pkg = require(process.cwd() + "/package.json");
 const axios = require('axios');
 const fs = require("node:fs");
 const path = require("node:path");
@@ -8,13 +8,13 @@ module.exports = {
     command: "menu",
     alias: ["menu", "help"],
     category: ["main"],
-    description: "Menampilkan menu bot",
+    description: "عرض قائمة أوامر البوت",
     loading: true,
     async run(m, { sock, plugins, config, Func }) {
     let data = fs.readFileSync(process.cwd() + "/system/case.js", "utf8");
     let casePattern = /case\s+"([^"]+)"/g;
     let matches = data.match(casePattern);
-    if (!matches) return m.reply("Tidak ada case yang ditemukan.");
+    if (!matches) return m.reply("لم يتم العثور على أي حالة.");
     matches = matches.map((match) => match.replace(/case\s+"([^"]+)"/, "$1"));   
     let menu = {};
     plugins.forEach((item) => {
@@ -43,59 +43,56 @@ module.exports = {
     });
       let premium = db.list().user[m.sender].premium.status
     let limit = db.list().user[m.sender].limit
-      let caption = `*🍟 Selamat datang di Dashboard bot*
-Nama saya nekoBot - , Berikut list command bot ini
+      let caption = `* ⚡ مرحباً بك في القائمة*
+اسمي edgar - إليك قائمة أوامر هذا البوت
 
-*– 乂 Info User*
-> *- Nama :* ${m.pushName}
-> *- Tag :* @${m.sender.split("@")[0]}
-> *- Status :* ${m.isOwner ? "Developer bot" : premium ? "Premium" : "Gratisan"}
-> *- Limit :* ${m.isOwner ? "Unlimited" : limit}
+*– 乂 معلومات المستخدم*
+> *- الاسم:* ${m.pushName}
+> *- الرقم:* @${m.sender.split("@")[0]}
+> *- الحالة:* ${m.isOwner ? "مطور البوت" : premium ? "مميز" : "مجاني"}
+> *- الحد:* ${m.isOwner ? "غير محدود" : limit}
 
-*– 乂 Info - Bot*
-> *- Nama :* ${pkg.name}
-> *- Versi :* v${pkg.version}
-> *- Runtime :* ${Func.toDate(process.uptime() * 1000)}
-> *- Prefix :* [ ${m.prefix} ]
-> *- Total fitur :* ${cmd + alias + matches.length}
-> *- Source code :* https://github.com/AxellNetwork/NekoBot
+*– 乂 معلومات البوت*
+> *- الاسم:* ${pkg.name}
+> *- الإصدار:* v${pkg.version}
+> *- البادئة:* [ ${m.prefix} ]
+> *- إجمالي الأوامر:* ${cmd + matches.length}
+> *- قناة البوت:* https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G
 
-> *- Fitur Limit :* [L]
-> *- Fitur Premium :* [P]
 
-☎️ Jika menemukan bug pada bot ini bisa langsung hubungi owner bot
+☎️ إذا اكتشفت خطأ في البوت، يمكنك مراسلة بمطور البوت مباشرة.
 
-*– 乂 M e n u - O t h e r*
+*– 乂 قائمة الأوامر الأخرى*
 
-${matches.map((a, i) => `*${i + 1}.* ${m.prefix + a}\n> Fitur sampingan ( Case Fitur )`).join("\n")} 
+${matches.map((a, i) => `*${i + 1}.* ${m.prefix + a}\n> ميزة جانبية (ميزة الحالة)`).join("\n")} 
 `
 Object.entries(menu).forEach(([tag, commands]) => {
-    caption += `\n*– 乂 M e n u – ${tag.split('').join(' ').capitalize()}*\n\n`;
+    caption += `\n*– 乂 قائمة الأوامر – ${tag.split('').join(' ').capitalize()}*\n\n`;
     commands.command.forEach((command, index) => {
         caption += `*${index + 1}.* ${m.prefix + command.name} ${command.settings?.limit ? "*[L]*" : ''}\n${command.description ? `> ${command.description}\n` : ''}`
             });
       });   
       m.reply({
            image: {
-               url: "https://files.catbox.moe/yupd7z.jpg"
+               url: "https://qu.ax/Hvjxc.jpg"
            },
            caption,
            mentions: [m.sender],
            footer: config.name,
            buttons: [{
+             buttonId: ".owner",
+               buttonText: {
+                   displayText: "صاحب البوت 🇲🇦"
+              }
+          },{
              buttonId: ".ping",
                buttonText: {
-                   displayText: "⚡ Ping Bot"
+                   displayText: "🧧 معلومات البوت"
               }
           },{
-             buttonId: ".script",
+             buttonId: ".channel",
                buttonText: {
-                   displayText: "👾 Script Bot"
-              }
-          },{
-             buttonId: ".tqto",
-               buttonText: {
-                   displayText: "👥 Top Contribute"
+                   displayText: " ⚡ قناة صانع البوت"
               }
           }],
           viewOnce: true,
