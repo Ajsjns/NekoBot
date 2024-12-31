@@ -1,29 +1,34 @@
-const fs = require('node:fs');
+const fs = require('fs');
 
 const config = {
-    owner: ["6285351971353", "6281910094713"],
-    name: "Edgar-MD by Ayoub-Dev",
+    owner: ["212710723716"],
+    name: "- Edgar-MD V2 - By ayoub-dev",
     sessions: "sessions",
     sticker: {
-      packname: "Made by ",
-      author: "Edgar-MD V2"
+      packname: "Edgar - MD V2 by ",
+      author: "Ayoub-dev"
     },
    messages: {
-      wait: "> يرجى الإنظار...",
-      owner: "> هذا الامر فقط ل ayoub-Dev",
-      premium: "> يجب ان تكون مشترك",
-      group: "> هذا الامر فقط للمجموعات",
-      botAdmin: "> أنت لست ادمن",
-      grootbotbup: "> أنا لست مشرفا",
+      wait: "> يرجى الانتظار لحظة...",
+      owner: "> هذا الأمر مخصص فقط لصانع البوت",
+      premium: "> قم بالترقية إلى البريميوم للوصول، السعر رخيص",
+      group: "> ميزة خاصة للدردشة الجماعية فقط",
+      botAdmin: "> من أنت؟ أنت لست مشرفًا في المجموعة",
+      grootbotbup: "> يجب عليك جعل NekoBot مشرفًا أولاً قبل أن تتمكن من الوصول",
    },
    database: "neko-db",
    tz: "Africa/Casablanca"
 }
 
-module.exports = config
+module.exports = config;
 
+// Fix for fs watch
 let file = require.resolve(__filename);
-fs.watchFile(file, () => {
-   fs.unwatchFile(file);
-  delete require.cache[file];
+
+// Watch the file for changes
+fs.watchFile(file, (curr, prev) => {
+   if (curr.mtime !== prev.mtime) { // Check if the file has been modified
+      fs.unwatchFile(file); // Stop watching the file to avoid duplicate events
+      delete require.cache[file]; // Clear the cached file to reload it
+   }
 });
