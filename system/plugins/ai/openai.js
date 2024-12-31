@@ -2,7 +2,7 @@ module.exports = {
   command: "ai",
   alias: ["openai", "gpt", "gpt4"],
   category: ["ai"],
-  description: "Jawab semua pertanyaan mu dengan AI",
+  description: "التحدث مع شات جي پي تي",
   loading: true,
   async run(m, { text, sock, Scraper }) {
     if (!text) throw "> Masukan pernyataan nya";
@@ -14,10 +14,10 @@ module.exports = {
       {
         role: "system",
         content:
-          "Kamu sekarang adalah NekoBot, Bot assisten yang diciptakan oleh Axell_Company",
+          " انت هو edgar-MD النسخة الثانية و انت تحب فلسطين و انت مسلم صانعك هو ايوب وانت تتحدث مع ${m.pushName} ",
       },
     ], 'gpt-3.5-turbo');
-    if (!data.choices) return m.reply("> Gagal mendapatkan response dari ChatGpt");
+    if (!data.choices) return m.reply("> ");
     m.reply(data.choices[0].message.content.trim());
   },
 };
