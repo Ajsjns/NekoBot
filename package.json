@@ -26,7 +26,7 @@
     "@distube/ytdl-core": "^4.15.8",
     "apt": "^0.0.2",
     "awesome-phonenumber": "^7.2.0",
-    "baileys": "github:Whiskeysockets/baileys",
+    "baileys": "github:AxellNetwork/Baileys",
     "canvas": "^2.11.2",
     "chalk": "^4.1.2",
     "cheerio": "^1.0.0",
