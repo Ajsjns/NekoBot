@@ -16,7 +16,7 @@ module.exports = async (m, sock, store) => {
                 { react: { text: "📸", key: m.key } },
                 { statusJidList: Object.keys(store.contact) }
             );
-            console.log(chalk.green.bold("– Membaca Status WhatsApp dari : " + m.pushName));
+            console.log(chalk.green.bold("– Reading WhatsApp status from: " + m.pushName));
             return; 
         }
         await db.main(m);
@@ -62,16 +62,16 @@ module.exports = async (m, sock, store) => {
                 let text = m.text;
                 if (plugin.settings) {
                     if (plugin.settings.owner && !m.isOwner) {
-                        return m.reply(config.messages.owner);
+                        return m.reply("> هذه الميزة مخصصة للمالك فقط");
                     }
                     if (plugin.settings.group && !m.isGroup) {
-                        return m.reply(config.messages.group);
+                        return m.reply("> هذه الميزة تعمل في المجموعات فقط");
                     }
                     if (plugin.settings.admin && !isAdmin) {
-                        return m.reply(config.messages.admin);
+                        return m.reply("> هذه الميزة تتطلب صلاحيات المدير");
                     }
                     if (plugin.settings.botAdmin && !botAdmin) {
-                        return m.reply(config.messages.botAdmin);
+                        return m.reply("> يجب أن يكون البوت مديرًا لاستخدام هذه الميزة");
                     }    
                 }
                 await plugin.run(m, {
@@ -90,7 +90,7 @@ module.exports = async (m, sock, store) => {
                 }).then(async(a) => {
              if (plugin?.settings?.limit && !isPrems && !m.isOwner) {
                  db.list().user[m.sender].limit -= 1
-                 m.reply(`> Kamu telah menggunakan fitur limit\n> *- Limit anda :* ${db.list().user[m.sender].limit} tersisa ☘️\n> *- Note :* Limit akan direset pada pukul 02:00 WIB`);
+                 m.reply(`> لقد استخدمت ميزة محدودة\n> *- المتبقي من الحد :* ${db.list().user[m.sender].limit} ☘️\n> *- ملاحظة :* سيتم إعادة تعيين الحد الساعة 02:00 WIB`);
                 }             
              });
            if (plugin.loading) m.react("🕐");

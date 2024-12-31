@@ -1,6 +1,6 @@
 //============================
-// - buat Pengguna case bisa tambah fitur disini
-// - Fitur akan otomatis terlihat di .menu jadi jangan bikin fitur menu lagi 👍
+// - Create user cases where additional features can be added here
+// - Features will automatically appear in the .menu, so don't create a menu feature again 👍
 //============================
 
 const util = require("util");
@@ -25,7 +25,7 @@ module.exports = async (m, sock, store) => {
         if (/image|video|webp/.test(quoted.msg.mimetype)) {
           let media = await quoted.download();
           if (quoted.msg?.seconds > 10)
-            throw "> Video diatas durasi 10 detik gabisa";
+            throw "> الفيديو أكثر من 10 ثواني لا يمكن تحويله إلى ملصق"; // "> Video above 10 seconds cannot be turned into a sticker"
           let exif;
           if (m.text) {
             let [packname, author] = m.text.split(/[,|\-+&]/);
@@ -68,13 +68,13 @@ module.exports = async (m, sock, store) => {
             await delay(1500);
           }
         } else
-          m.reply("> Reply photo atau video yang ingin di jadikan sticker");
+          m.reply("> رد على الصورة أو الفيديو الذي تريد تحويله إلى ملصق"); // "> Reply to the image or video you want to turn into a sticker"
       }
       break;
     case "brat":
       {
         let input = m.isQuoted ? m.quoted.body : m.text;
-        if (!input) return m.reply("> Reply/Masukan pessn");
+        if (!input) return m.reply("> رد أو أدخل نصًا"); // "> Reply or enter text"
         m.reply(config.messages.wait);
         let media = await scrape.brat(input);
         let sticker = await writeExif(
