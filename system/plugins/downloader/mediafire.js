@@ -2,16 +2,16 @@ module.exports = {
   command: "mediafire",
   alias: ["mf", "mfdl"],
   category: ["downloader"],
-  setings: {
-    limit: true,
+  settings: {
+    limit: false,
   },
-  description: "Unduh link MediaFire",
+  description: "تحميل رابط MediaFire",
   loading: true,
   async run(m, { sock, Scraper, Func, text }) {
     if (!Func.isUrl(text) || !/mediafire.com/.test(text) || !text)
-      throw "> Masukan link MediaFire nya";
+      throw "> من فضلك أدخل رابط MediaFire";
     let data = await Scraper.mediafire(text);
-    let cap = "*– 乂 MediaFire - Downloader*\n";
+    let cap = "*– 乂 MediaFire - محمل*\n";
     cap += Object.entries(data)
       .map(([a, b]) => `> *- ${a.capitalize()} :* ${b}`)
       .join("\n");
@@ -20,7 +20,7 @@ module.exports = {
     );
     let limit = Func.sizeLimit(data.size, db.list().settings.max_upload);
     if (limit.oversize)
-      throw `Maaf file yang kamu download telah melebihi batas ukuran file yang ditentukan *( ${size} )*, upgrade status mu ke premium agar dapat mendownload file hingga *1GB!*`;
+      throw `عذرًا، الملف الذي تحاول تحميله يتجاوز الحد الأقصى لحجم الملفات المسموح به *( ${data.size} )*، قم بترقية حالتك إلى مميز لتحميل الملفات حتى *1GB!*`;
     m.reply({
       document: buffer,
       mimetype: data.mimetype,

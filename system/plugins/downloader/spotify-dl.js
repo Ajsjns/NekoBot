@@ -5,18 +5,18 @@ module.exports = {
   alias: [],
   category: ["downloader"],
   settings: {
-    limit: true,
+    limit: false,
   },
-  description: "Mencari/download musik dari Spotify",
+  description: "البحث/تحميل الموسيقى من سبوتيفاي",
   loading: true,
   async run(m, { sock, Func, Scraper, text }) {
     if (!text)
-      throw `> *乂 Cara Penggunaan :*
-> *-* Masukan Query untuk mencari video
-> *-* Masukan Url untuk mendownload musik
+      throw `> *乂 طريقة الاستخدام :*
+> *-* أدخل الاستعلام للبحث عن الفيديو
+> *-* أدخل الرابط لتحميل الموسيقى
 
-> *乂 Contoh Penggunaan :*
-> *- ${m.prefix + m.command} Video lucu*
+> *乂 مثال على الاستخدام :*
+> *- ${m.prefix + m.command} فيديو مضحك*
 > *- ${m.prefix + m.command} https://open.spotify.com/track/057YRaQ57p70MVg4hMIIkB*`;
 
     if (/open.spotify.com/.test(text)) {
@@ -29,9 +29,9 @@ module.exports = {
       });
     } else {
       let data = await Scraper.spotify.search(text);
-      let cap = `*– 乂 Spotify - search*
+      let cap = `*– 乂 سبوتيفاي - بحث*
 `;
-      cap += `> Ketik *${m.prefix + m.command} ${data[0].url}* untuk mendownload musik dari spotify\n\n`;
+      cap += `> اكتب *${m.prefix + m.command} ${data[0].url}* لتحميل الموسيقى من سبوتيفاي\n\n`;
       cap += data
         .map((a) =>
           Object.entries(a)

@@ -3,15 +3,15 @@ module.exports = {
   alias: ["ttsearch"],
   category: ["downloader"],
   settings: {
-    limit: true,
+    limit: false,
   },
-  description: "> untuk mencari video dari tiktok",
+  description: "> للبحث عن فيديوهات من تيك توك",
   loading: true,
   async run(m, { sock, Func, text, Scraper, config }) {
-    if (!text) throw "> Masukan pencarian nya";
+    if (!text) throw "> من فضلك أدخل ما تريد البحث عنه";
     let data = await Scraper.tiktok.search(text);
     let json = data.getRandom();
-    let cap = "*– 乂 Tiktok - search*\n";
+    let cap = "*– 乂 تيك توك - بحث*\n";
     cap += Object.entries(json.metadata)
       .map(([a, b]) => `> *- ${a.capitalize()} :* ${b}`)
       .join("\n");
