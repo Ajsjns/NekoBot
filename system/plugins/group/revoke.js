@@ -7,12 +7,12 @@ module.exports = {
     admin: true,
     botAdmin: true,
   },
-  description: "Untuk mereset ulang link group",
+  description: "لإعادة تعيين رابط المجموعة",
   async run(m, { sock }) {
     await sock
       .groupRevokeInvite(m.cht)
       .then((a) =>
-        m.reply("> *- Link group baru :* https://chat.whatsapp.com/" + a),
+        m.reply("> *- الرابط الجديد للمجموعة :* https://chat.whatsapp.com/" + a),
       );
   },
 };

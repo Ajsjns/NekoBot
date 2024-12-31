@@ -7,25 +7,26 @@ module.exports = {
     admin: true,
     botAdmin: true,
   },
-  description: "Untuk membuka/menutup group",
+  description: "لفتح/إغلاق المجموعة",
   loading: true,
   async run(m, { sock, text }) {
     if (!text)
-      throw `*– 乂 Cara - Penggunaan*
-> *-* *\`open\`* untuk membuka group
-> *-* *\`close\`* untuk menutup group
+      throw `*– 乂 طريقة الاستخدام*
+> *-* *\`فتح\`* لفتح المجموعة
+> *-* *\`إغلاق\`* لإغلاق المجموعة
 
-*– 乂 Contoh Pengunaan*
-> *-* ${m.prefix + m.command} open
-> *-* ${m.prefix + m.command} close`;
+*– 乂 مثال على الاستخدام*
+> *-* ${m.prefix + m.command} فتح
+> *-* ${m.prefix + m.command} إغلاق`;
+
     await sock
       .groupSettingUpdate(
         m.cht,
-        text === "open" ? "not_announcement" : "announcement",
+        text === "فتح" ? "not_announcement" : "announcement",
       )
       .then((a) =>
         m.reply(
-          `> *-* Berhasil ${text === "open" ? "membuka" : "menutup"} group`,
+          `> *-* تم ${text === "فتح" ? "فتح" : "إغلاق"} المجموعة`,
         ),
       );
   },

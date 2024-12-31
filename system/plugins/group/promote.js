@@ -7,18 +7,18 @@ module.exports = {
     admin: true,
     botAdmin: true,
   },
-  description: "Untuk mengubah member menjadi admin",
+  description: "لترقية العضو ليصبح مشرفاً",
   async run(m, { sock, text }) {
     let who = m.quoted
       ? m.quoted.sender
       : m.mentions.length > 0
         ? m.mentions[0]
         : false;
-    if (!who) throw "> Tag/Balas pesan member yang mau di promote";
+    if (!who) throw "> الرجاء الإشارة أو الرد على رسالة العضو الذي ترغب في ترقيته";
     let user = await sock.onWhatsApp(who);
-    if (!user[0].exists) throw "> Member tidak terdaftar di WhatsApp";
+    if (!user[0].exists) throw "> العضو غير مسجل في WhatsApp";
     await sock
       .groupParticipantsUpdate(m.cht, [who], "promote")
-      .then((a) => m.reply("> Awas ada admin baru !"));
+      .then((a) => m.reply("> احترس، هناك مشرف جديد!"));
   },
 };

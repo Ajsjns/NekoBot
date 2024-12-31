@@ -6,10 +6,10 @@ module.exports = {
     group: true,
     botAdmin: true,
   },
-  description: "Untuk mengambil link group",
+  description: "لأخذ رابط المجموعة",
   async run(m, { sock }) {
     let link =
       "https://chat.whatsapp.com/" + (await sock.groupInviteCode(m.cht));
-    m.reply(`*– 乂 ${m.metadata.subject}*\n> *- Link :* ${link}`);
+    m.reply(`*– 乂 ${m.metadata.subject}*\n> *- الرابط :* ${link}`);
   },
 };

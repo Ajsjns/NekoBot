@@ -7,18 +7,18 @@ module.exports = {
     admin: true,
     botAdmin: true,
   },
-  description: "Untuk mengeluarkan Member dari group",
+  description: "لطرد عضو من المجموعة",
   async run(m, { sock, text }) {
     let who = m.quoted
       ? m.quoted.sender
       : m.mentions.length > 0
         ? m.mentions[0]
         : false;
-    if (!who) throw "> Tag/Balas pesan member yang mau di kick";
+    if (!who) throw "> الرجاء وضع تاغ أو الرد على الرسالة لطرد العضو";
     let user = await sock.onWhatsApp(who);
-    if (!user[0].exists) throw "> Member tidak terdaftar di WhatsApp";
+    if (!user[0].exists) throw "> العضو غير مسجل في WhatsApp";
     await sock
       .groupParticipantsUpdate(m.cht, [who], "remove")
-      .then((a) => m.reply("> Success mengeluar member jomok 😹"));
+      .then((a) => m.reply("> تم طرد العضو من المجموعة بنجاح 😹"));
   },
 };

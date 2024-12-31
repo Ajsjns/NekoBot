@@ -7,14 +7,14 @@ module.exports = {
     admin: true,
     botAdmin: true,
   },
-  description: "Untuk mengubah poto profile group",
+  description: "لتغيير صورة بروفايل المجموعة",
   async run(m, { sock }) {
     let q = m.quoted ? m.quoted : m;
     if (!q.isMedia)
-      throw "> Reply Atau kirim photo yang ingin di jadikan pp group";
+      throw "> قم بالرد أو إرسال الصورة التي تريد تعيينها كصورة بروفايل للمجموعة";
     let buffer = await q.download();
     await sock
       .updateProfilePicture(m.cht, buffer)
-      .then((a) => m.reply("> *Berhasil Mengubah pp group !*"));
+      .then((a) => m.reply("> *تم تغيير صورة بروفايل المجموعة بنجاح!*"));
   },
 };

@@ -7,13 +7,13 @@ module.exports = {
     admin: true,
     botAdmin: true,
   },
-  description: "Untuk mengganti nama group",
+  description: "لتغيير اسم المجموعة",
   async run(m, { sock, text }) {
-    if (!text) throw "> Masukan Nama group baru nya";
-    if (text.length > 20) throw "> Buset panjang amat, Maksimal 20 karakter!";
+    if (!text) throw "> الرجاء إدخال اسم المجموعة الجديد";
+    if (text.length > 20) throw "> الاسم طويل جداً، الحد الأقصى 20 حرف!";
     await sock.groupUpdateSubject(m.cht, text);
     m.reply(
-      `> *Berhasil mengganti nama group menjadi :*
+      `> *تم تغيير اسم المجموعة إلى :*
  > ${text}`,
     );
   },

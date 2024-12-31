@@ -7,18 +7,18 @@ module.exports = {
     admin: true,
     botAdmin: true,
   },
-  description: "Untuk mengubah admin menjadi member",
+  description: "لتحويل المسؤول إلى عضو",
   async run(m, { sock, text }) {
     let who = m.quoted
       ? m.quoted.sender
       : m.mentions.length > 0
         ? m.mentions[0]
         : false;
-    if (!who) throw "> Tag/Balas pesan member yang mau di demote";
+    if (!who) throw "> الرجاء وضع تاغ أو الرد على الرسالة لتحويل المسؤول إلى عضو";
     let user = await sock.onWhatsApp(who);
-    if (!user[0].exists) throw "> Member tidak terdaftar di WhatsApp";
+    if (!user[0].exists) throw "> العضو غير مسجل في WhatsApp";
     await sock
       .groupParticipantsUpdate(m.cht, [who], "demote")
-      .then((a) => m.reply("> Jabatan mu turun king !"));
+      .then((a) => m.reply("> تم خفض رتبتك من المسؤول إلى عضو"));
   },
 };
