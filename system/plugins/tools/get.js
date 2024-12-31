@@ -6,15 +6,14 @@ module.exports = {
   command: "get",
   alias: ["fetch"],
   category: ["tools"],
-  description: "Mendapatkan data dari url",
+  description: "الحصول على البيانات من الرابط",
   loading: true,
   async run(m, { sock, Func, text, config }) {
-    if (!text) throw `> Masukan atau reply url yang ingin kamu ambil data nya`;
+    if (!text) throw `> الرجاء إدخال أو الرد على الرابط الذي تريد جلب البيانات منه`;
     for (let i of isUrl(text)) {
       let data = await undici.fetch(i);
       let mime = data.headers.get("content-type").split(";")[0];
-      let cap = `*– 乂 Fetch - Url*
-> *- Reques :* ${i}`;
+      let cap = `*– 乂 Fetch - Url*\n> *- الرابط :* ${i}`;
       let body;
       if (/\html/gi.test(mime)) {
         body = await data.text();
@@ -81,6 +80,7 @@ module.exports = {
     }
   },
 };
+
 function isUrl(string) {
   let urlRegex = /(https?:\/\/[^\s]+)/g;
   let result = string.match(urlRegex);
