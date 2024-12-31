@@ -4,7 +4,7 @@ module.exports = {
      settings: {
        owner: true
     },
-    description: "Example Features Bot",
+    description: "مثال",
    async run(m, { text }) {
     let cap = `*– 乂 Example - Code*
 > Pilih type 1 atau 2 Sesuai Dengan kebutuhan anda`    

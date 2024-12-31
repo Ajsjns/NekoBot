@@ -5,20 +5,20 @@ module.exports = {
   settings: {
     owner: true,
   },
-  description: "Ubah bot menjadi mode senyap",
+  description: "تغيير البوت إلى وضع الصمت",
   async run(m, { sock, text }) {
     if (!text)
       return m.reply({
         poll: {
-          name: `*– 乂 Cara Penggunaan*
-> *\`0\`* Untuk mematikan fitur self
-> *\`1\`* Untuk menghidupkan fitur self`,
+          name: `*– 乂 طريقة الاستخدام*
+> *\`0\`* لإيقاف ميزة الصمت
+> *\`1\`* لتشغيل ميزة الصمت`,
           values: [`${m.prefix}self 0`, `${m.prefix}self 1`],
           selectableCount: 1,
         },
       });
     let settings = db.list().settings;
     settings.self = parseInt(text) > 0 ? true : false;
-    m.reply(`> Berhasil ${text < 1 ? "mematikan" : "menghidupkan"} fitur self`);
+    m.reply(`> تم ${text < 1 ? "إيقاف" : "تشغيل"} ميزة الصمت`);
   },
 };

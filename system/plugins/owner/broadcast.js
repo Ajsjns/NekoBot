@@ -7,7 +7,7 @@ module.exports = {
   settings: {
     owner: true,
   },
-  description: "mengirim pesan ke semua orang",
+  description: "ارسال رسالة الى الجميع",
   async run(m, { sock, store, text }) {
     if (!text)
       throw `*– 乂 Cara - Penggunaan*

@@ -7,11 +7,11 @@ module.exports = {
   settings: {
     owner: true,
   },
-  description: "Untuk Pengelolaan Scraper bot",
+  description: "لإدارة روبوت السحب",
   async run(m, { sock, Func, text, config }) {
     let src = await scraper.list();
     if (!text)
-      throw `> *- 乂 Cara Penggunaan*\n> *\`--get\`* Untuk mengambil Scrape\n> *\`--add\`* Untuk menambahkan Scrape\n> *\`--delete\`* Untuk menghapus Scrape\n\n> *- 乂 List Scraper yang tersedia :*\n${Object.keys(
+      throw `> *- 乂 طريقة الاستخدام*\n> *\`--get\`* لسحب البيانات\n> *\`--add\`* لإضافة سحب البيانات\n> *\`--delete\`* لحذف السحب\n\n> *- 乂 قائمة السحب المتاحة :*\n${Object.keys(
         src,
       )
         .map((a, i) => `> *${i + 1}.* ${a}`)
@@ -26,7 +26,7 @@ module.exports = {
           m.reply(fs.readFileSync(file.trim()).toString());
         } catch (e) {
           m.reply(
-            `> Scrape ${list[parseInt(input) - 1]} Tidak ditemukan, cek kembali list Scrape yang kamu simpan`,
+            `> سحب ${list[parseInt(input) - 1]} غير موجود، تحقق من قائمة السحب المحفوظة لديك`,
           );
         }
       } else {
@@ -35,19 +35,19 @@ module.exports = {
           m.reply(fs.readFileSync(file.trim()).toString());
         } catch (e) {
           m.reply(
-            `> Scrape ${input} Tidak ditemukan, cek kembali list Scrape yang kamu simpan`,
+            `> سحب ${input} غير موجود، تحقق من قائمة السحب المحفوظة لديك`,
           );
         }
       }
     } else if (m.text.includes("--add")) {
-      if (!m.quoted) throw "> Reply scrape yang mau kamu simpan";
+      if (!m.quoted) throw "> أعد الرد على السحب الذي تريد حفظه";
       let input = m.text.replace("--add", "").trim();
       try {
         let file = scraper.dir + "/" + input + ".js";
         fs.writeFileSync(file.trim(), m.quoted.body);
-        m.reply("> Berhasil Menyimpan scrape : " + input);
+        m.reply("> تم حفظ السحب بنجاح : " + input);
       } catch (e) {
-        m.reply(`> Gagal menyimpan scrape, coba lagi`);
+        m.reply(`> فشل في حفظ السحب، حاول مرة أخرى`);
       }
     } else if (text.includes("--delete")) {
       let input = text.replace("--delete", "").trim();
@@ -56,20 +56,20 @@ module.exports = {
         try {
           let file = scraper.dir + "/" + list[parseInt(input) - 1] + ".js";
           fs.unlinkSync(file.trim());
-          m.reply("> Scraper Berhasil dihapus");
+          m.reply("> تم حذف السحب بنجاح");
         } catch (e) {
           m.reply(
-            `> Scrape ${list[parseInt(input) - 1]} Tidak ditemukan, cek kembali list Scrape yang kamu simpan`,
+            `> سحب ${list[parseInt(input) - 1]} غير موجود، تحقق من قائمة السحب المحفوظة لديك`,
           );
         }
       } else {
         try {
           let file = scraper.dir + "/" + input + ".js";
           fs.unlinkSync(file.trim());
-          m.reply("> Scraper Berhasil dihapus");
+          m.reply("> تم حذف السحب بنجاح");
         } catch (e) {
           m.reply(
-            `> Scrape ${input} Tidak ditemukan, cek kembali list Scrape yang kamu simpan`,
+            `> سحب ${input} غير موجود، تحقق من قائمة السحب المحفوظة لديك`,
           );
         }
       }

@@ -5,23 +5,23 @@ module.exports = {
   command: "sp",
   category: ["owner"],
   alias: ["saveplugin"],
-  description: "untuk menyimpan fitur bot",
+  description: "لحفظ ميزات البوت",
   settings: {
     owner: true,
   },
   loading: true,
   async run(m, { text, config, Func }) {
-    if (!m.quoted) throw "> Reply kodingan mu king 😎";
-    if (!text) throw "> Masukan Nama file nya";
+    if (!m.quoted) throw "> أعد الرد على الكود يا ملك 😎";
+    if (!text) throw "> أدخل اسم الملف";
     m.reply(config.messages.wait);
     try {
       let locate = "system/plugins/";
       await fs.writeFileSync(locate + m.text, m.quoted.body);
       m.reply(
-        `> Fitur berhasil tersimpan kedalam file :\n> ${locate + m.text}`,
+        `> تم حفظ الميزة بنجاح في الملف :\n> ${locate + m.text}`,
       );
     } catch (e) {
-      m.reply("> Folder tersebut tidak ada mungkin belum kamu buat");
+      m.reply("> ربما لم تقم بإنشاء هذا المجلد بعد");
     }
   },
 };
