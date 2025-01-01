@@ -1,5 +1,5 @@
 module.exports = {
-  command: "ai",
+  command: "بوت",
   alias: ["openai", "gpt", "gpt4"],
   category: ["ai"],
   description: "التحدث مع شات جي پي تي",
