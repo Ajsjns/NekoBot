@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const config = {
-    owner: ["212710723716"],
+    owner: ["967780420764"],
     name: "- Edgar-MD V2 - By ayoub-dev",
     sessions: "sessions",
     sticker: {
