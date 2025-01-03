@@ -1,5 +1,5 @@
 module.exports = {
-  command: "تيك توك",
+  command: "تكتوك",
   alias: ["tt", "ttdl", "tiktokdl"],
   category: ["downloader"],
   settings: {
