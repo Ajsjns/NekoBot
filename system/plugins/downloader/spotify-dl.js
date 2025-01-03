@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 module.exports = {
-  command: "spotify",
+  command: "تحميل",
   alias: [],
   category: ["downloader"],
   settings: {
