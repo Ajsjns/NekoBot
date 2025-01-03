@@ -1,5 +1,5 @@
 module.exports = {
-  command: "remini",
+  command: "تحسين",
   alias: ["hdr", "hd"],
   category: ["tools"],
   settings: {
