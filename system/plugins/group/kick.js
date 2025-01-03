@@ -19,6 +19,6 @@ module.exports = {
     if (!user[0].exists) throw "> العضو غير مسجل في WhatsApp";
     await sock
       .groupParticipantsUpdate(m.cht, [who], "remove")
-      .then((a) => m.reply("> تم طرد العضو من المجموعة بنجاح 😹"));
+      .then((a) => m.reply("> تم طرد العضو من المجموعة بنجاح"));
   },
 };
