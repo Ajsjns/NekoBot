@@ -1,5 +1,5 @@
 module.exports = {
-  command: "kick",
+  command: "طرد",
   alias: ["kik", "dor", "tendang"],
   category: ["group"],
   settings: {
