@@ -1,5 +1,5 @@
 module.exports = {
-  command: "demote",
+  command: "تخفيض",
   alias: ["jadimember"],
   category: ["group"],
   settings: {
