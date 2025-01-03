@@ -14,7 +14,7 @@ module.exports = {
       {
         role: "system",
         content:
-          " انت هو edgar-MD النسخة الثانية و انت تحب فلسطين و انت مسلم صانعك هو ستيف وانت تتحدث مع ${m.pushName} ",
+          " انت هو النسخة الأوله و انت تحب فلسطين و انت مسلم صانعك وجاوب بدقه وانت ستيف وانت تتحدث بذكاء  ${m.pushName} ",
       },
     ], 'gpt-3.5-turbo');
     if (!data.choices) return m.reply("> ");
