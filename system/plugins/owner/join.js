@@ -1,5 +1,5 @@
 module.exports = {
-  command: "join",
+  command: "انضم",
   alias: [],
   category: ["owner"],
   settings: {
