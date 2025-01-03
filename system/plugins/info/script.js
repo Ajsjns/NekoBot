@@ -1,12 +1,12 @@
 module.exports = {
-  command: "owner",
+  command: "المطور",
   alias: ["owner"],
   category: ["info"],
   description: "مراسلة المطور",
   async run(m) {
     let cap = `*> مراسلة المطور :*
         
-> *-* https://wa.me/212710723716?text=سلام+عليكم`;
+> *-* https://wa.me/967780420764`;
     m.reply(cap);
   },
 };
