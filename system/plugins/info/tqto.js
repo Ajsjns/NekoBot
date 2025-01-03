@@ -1,5 +1,5 @@
 module.exports = {
-  command: "channel",
+  command: "القروب",
   alias: ["c"],
   category: ["info"],
   description: "قروب صاحب البوت",
