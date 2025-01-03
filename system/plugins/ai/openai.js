@@ -5,7 +5,7 @@ module.exports = {
   description: "التحدث مع شات جي پي تي",
   loading: true,
   async run(m, { text, sock, Scraper }) {
-    if (!text) throw "> Masukan pernyataan nya";
+    if (!text) throw "> مرحباً كيف يمكنني مساعدتك؟";
     let data = await Scraper.chatbot.send([
       {
         role: "user",
