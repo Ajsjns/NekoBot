@@ -2,7 +2,7 @@ const yts = require("yt-search");
 const axios = require("axios");
 
 module.exports = {
-  command: "play",
+  command: "شغل",
   alias: [],
   category: ["downloader"],
   settings: {
