@@ -2,11 +2,11 @@ module.exports = {
   command: "channel",
   alias: ["c"],
   category: ["info"],
-  description: "قناة صاحب البوت",
+  description: "قروب صاحب البوت",
   async run(m) {
-    let cap = `*>_ قناتي للتشجيع :*
+    let cap = `*> قروبي :*
         
-> *-* https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G`;
+> *-* https://chat.whatsapp.com/GIQRZXJwgDPErFXsOIbBEb`;
     m.reply(cap);
   },
 };
