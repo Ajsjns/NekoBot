@@ -1,5 +1,5 @@
 module.exports = {
-  command: "link",
+  command: "الرابط",
   alias: ["linkgc"],
   category: ["group"],
   settings: {
