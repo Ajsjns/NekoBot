@@ -6,7 +6,7 @@ const config = {
     sessions: "sessions",
     sticker: {
       packname: "Edgar - MD V2 by ",
-      author: "Ayoub-dev"
+      author: "ستيف"
     },
    messages: {
       wait: "> يرجى الانتظار لحظة...",
