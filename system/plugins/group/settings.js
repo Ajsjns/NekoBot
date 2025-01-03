@@ -1,5 +1,5 @@
 module.exports = {
-  command: "gcsetting",
+  command: "قروب",
   alias: ["groupsetting", "settingc"],
   category: ["group"],
   settings: {
