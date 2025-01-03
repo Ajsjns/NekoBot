@@ -5,7 +5,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 module.exports = {
-    command: "menu",
+    command: "اوامر",
     alias: ["menu", "help"],
     category: ["main"],
     description: "عرض قائمة أوامر البوت",
