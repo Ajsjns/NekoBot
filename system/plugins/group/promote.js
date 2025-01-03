@@ -1,5 +1,5 @@
 module.exports = {
-  command: "promote",
+  command: "ترقيه",
   alias: ["jadiadmin", "newking"],
   category: ["group"],
   settings: {
