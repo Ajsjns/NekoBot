@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 module.exports = {
-  command: "facebook",
+  command: "فيسبوك",
   alias: ["fb", "fbdl"],
   category: ["downloader"],
   settings: {
