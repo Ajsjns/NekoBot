@@ -1,7 +1,7 @@
 const { writeExif } = require(process.cwd() + "/lib/sticker.js");
 
 module.exports = {
-  command: 'furbrat',
+  command: 'ملصق1',
   alias: ['hikagen'],
   category: ['tools'],
   settings: {
