@@ -1,5 +1,5 @@
 module.exports = {
-  command: "self",
+  command: "اعدادات",
   alias: [],
   category: ["owner"],
   settings: {
