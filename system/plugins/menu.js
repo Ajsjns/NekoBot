@@ -44,7 +44,7 @@ module.exports = {
       let premium = db.list().user[m.sender].premium.status
     let limit = db.list().user[m.sender].limit
       let caption = `* ⚡ مرحباً بك في القائمة*
-اسمي edgar - إليك قائمة أوامر هذا البوت
+ - إليك قائمة أوامر هذا البوت
 
 *– 乂 معلومات المستخدم*
 > *- الاسم:* ${m.pushName}
@@ -57,7 +57,7 @@ module.exports = {
 > *- الإصدار:* v${pkg.version}
 > *- البادئة:* [ ${m.prefix} ]
 > *- إجمالي الأوامر:* ${cmd + matches.length}
-> *- قناة البوت:* https://whatsapp.com/channel/0029VayqYQDBVJl5mVZsit1G
+> *- قروب البوت:* https://chat.whatsapp.com/GIQRZXJwgDPErFXsOIbBEb
 
 
 ☎️ إذا اكتشفت خطأ في البوت، يمكنك مراسلة بمطور البوت مباشرة.
