@@ -6,7 +6,7 @@ const {
 } = bail
 
 module.exports = {
-  command: "add",
+  command: "اضف",
   alias: [],
   category: ["group"],
   settings: {
