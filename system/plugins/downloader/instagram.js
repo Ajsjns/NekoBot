@@ -1,5 +1,5 @@
 module.exports = {
-  command: "Instagram",
+  command: "انستا",
   alias: ["igdl", "ig", "igvideo", "igreel"],
   category: ["downloader"],
   settings: {
